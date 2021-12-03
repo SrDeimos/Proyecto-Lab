@@ -36,7 +36,6 @@ public class Menu {
                 System.out.printf("Salir: 7");
     
                 System.out.printf("¿Qué desea hacer? ");
-                //ola
             }
                 
         }
