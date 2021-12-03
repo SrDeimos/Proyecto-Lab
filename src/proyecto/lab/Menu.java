@@ -1,6 +1,7 @@
 package proyecto.lab;
 import java.util.Scanner;
 public class Menu {
+    //op=opción (1,2,3,etc), res= respuesta de si desea continuar S/N
     char op, res;
     public void menuPrincipal(){
         Scanner tec = new Scanner (System.in);
