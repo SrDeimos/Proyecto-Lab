@@ -9,7 +9,11 @@ public class Recepcion {
 
         Ajencia pasajero = new Ajencia();
         
-        
+        System.out.println("This");
+        System.out.println("is");
+        System.out.println("a");
+        System.out.println("testing");
+        System.out.println("message");
     }
     
 }
