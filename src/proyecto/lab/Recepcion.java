@@ -9,6 +9,9 @@ public class Recepcion {
 
         Ajencia pasajero = new Ajencia();
         
+        Menu menuP = new Menu ();
+        menuP.menuPrincipal();
+        
         System.out.println("This");
         System.out.println("is");
         System.out.println("a");

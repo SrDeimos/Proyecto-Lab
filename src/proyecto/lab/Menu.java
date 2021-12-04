@@ -25,7 +25,9 @@ public class Menu {
         }
         else
         {
-            System.out.print("*** Error: Opción inválida.");
+            System.out.println("*** Error: Opción inválida.");
+            System.out.print("Presione ENTER para continuar");
+            tec.nextLine();
             for (op=0;op>=8;){
                 System.out.printf("\nMenú Principal");
                 System.out.printf("\nRegistro de reservaciones: 1");
