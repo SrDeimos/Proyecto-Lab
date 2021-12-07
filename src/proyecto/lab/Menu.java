@@ -1,46 +1,107 @@
 package proyecto.lab;
+
 import java.util.Scanner;
+
 public class Menu {
+
     //op=opción (1,2,3,etc), res= respuesta de si desea continuar S/N
-    char op, res;
-    public void menuPrincipal(){
-        Scanner tec = new Scanner (System.in);
-        System.out.printf("\nMenú Principal");
-        System.out.printf("\nRegistro de reservaciones: 1");
-        System.out.printf("\nEliminación de Reservaciones: 2");
-        System.out.printf("\nModificación de Reservaciones: 3");
-        System.out.printf("\nSubmenú Consulta de Reservaciones: 4");
-        System.out.printf("\nMapa de Ocupación: 5");
-        System.out.printf("\nReporte de reservaciones: 6");
-        System.out.printf("Salir: 7");
-    
-        System.out.printf("¿Qué desea hacer? ");
-        op = tec.nextLine().charAt(0);
-        
-        if (op>=1 && op<=7)
-        {
-         System.out.printf("\nProceso en construcción ¿Desea continuar? S/N");
-         res = tec.nextLine().charAt(0);
-         
-        }
-        else
-        {
-            System.out.println("*** Error: Opción inválida.");
-            System.out.print("Presione ENTER para continuar");
-            tec.nextLine();
-            for (op=0;op>=8;){
-                System.out.printf("\nMenú Principal");
-                System.out.printf("\nRegistro de reservaciones: 1");
-                System.out.printf("\nEliminación de Reservaciones: 2");
-                System.out.printf("\nModificación de Reservaciones: 3");
-                System.out.printf("\nSubmenú Consulta de Reservaciones: 4");
-                System.out.printf("\nMapa de Ocupación: 5");
-                System.out.printf("\nReporte de reservaciones: 6");
-                System.out.printf("Salir: 7");
-    
-                System.out.printf("¿Qué desea hacer? ");
+    int res;
+
+    public void menuPrincipal() {
+
+        boolean condicion = false;
+
+        int count = 0;
+
+        do {
+
+            if (count >= 1) {
+                System.out.println("  ");
+                System.out.println("Seleccion incorrecta, solamente hay selecciones del 1 al 7");
+                System.out.println("  ");
             }
+
+            Scanner tohru = new Scanner(System.in);
+            System.out.println("¡Seleccione una seccion del menu!");
+            System.out.println("1)-. Registro de Reservaciones.");
+            System.out.println("2)-. Eleminación de Reservaciones.");
+            System.out.println("3)-. Modificación de Reservaciones.");
+            System.out.println("4)-. Submenu Consulta de Reservaciones.");
+            System.out.println("5)-. Mapa de ocupacion");
+            System.out.println("6)-. Reporte de Reservaciones");
+            System.out.println("7)-. Fin");
+            res = tohru.nextInt();
+
+            if (res >= 1 && res <= 7) {
+                tohru.nextLine();
+
+                condicion = getSelection(res);
                 
+                count += 0;
+            }
+
+            count++;
+        } while (!condicion);
+
+        System.out.println("Debugg: Seleccion terminada");
+    }
+
+    public boolean getSelection(int numero) {
+
+        boolean condicion;
+
+        switch (numero) {
+            case 1:
+                System.out.println("Seccion seleccionada 'Registro de Reservaciones.'");
+
+                condicion = sCorrecta();
+                return condicion;
+            case 2:
+                System.out.println("Seccion seleccionada 'Eleminación de Reservaciones.'");
+
+                condicion = sCorrecta();
+                return condicion;
+            case 3:
+                System.out.println("Seccion seleccionada 'Modificación de Reservaciones.'");
+
+                condicion = sCorrecta();
+                return condicion;
+            case 4:
+                System.out.println("Seccion seleccionada 'Submenu Consulta de Reservaciones.'");
+
+                condicion = sCorrecta();
+                return condicion;
+            case 5:
+                System.out.println("Seccion seleccionada 'Mapa de ocupacion.'");
+
+                condicion = sCorrecta();
+                return condicion;
+            case 6:
+                System.out.println("Seccion seleccionada 'Reporte de Reservaciones'");
+
+                condicion = sCorrecta();
+                return condicion;
+            default:
+                System.out.println("Seleccion incorrecta, Intentelo denuevo");
+                return false;
+
         }
-}
+    }
+
+    public boolean sCorrecta() {
+
+        Scanner tohru = new Scanner(System.in);
+
+        String respuesta;
+
+        System.out.println("¿La seleccion es correcta? (S/N)");
+        respuesta = tohru.nextLine();
+
+        if (respuesta.equalsIgnoreCase("S")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

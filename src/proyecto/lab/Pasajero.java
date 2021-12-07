@@ -1,6 +1,6 @@
 package proyecto.lab;
 
-public class Ajencia {
+public class Pasajero {
 
     String nombre, cAvion, uAsiento, cAsiento, destino;
     double cBoleto;
