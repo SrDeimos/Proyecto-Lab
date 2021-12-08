@@ -103,5 +103,30 @@ public class Menu {
             return false;
         }
     }
+    public void registroReservaciones(){
+        Scanner tec = new Scanner (System.in);
+        int cont;
+        cont = 0;
+        String nombre[] = new String [cont];
+        int id [] = new int [cont];
+        String destino [] = new String [cont];
+        Pasajero pas = new Pasajero();
+        
+        while (cont==0 && cont<10){
+            System.out.print("Nombre: ");
+            nombre[cont] = tec.nextLine();
+            pas.setNombre(nombre[cont]);
+            System.out.print("Identificación (ID): ");
+            id[cont] = tec.nextInt();
+            pas.setIdentificaciones(id[cont]);
+            System.out.println("Destinos: "
+                + "         Luna (LUN)"
+                + "         Europa(EUR)"
+                + "         Titán (TAN)");
+            System.out.print("Ingresar destino: ");
+            destino[cont] = tec.nextLine();
+            cont++;
+        }
+    }
 
 }
