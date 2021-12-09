@@ -4,7 +4,14 @@ import java.util.Scanner;
 
 public class Menu {
 
-    //op=opción (1,2,3,etc), res= respuesta de si desea continuar S/N
+    Nave nave;
+
+    Pasajero pasajero;
+
+    public Menu() {
+        nave = new Nave();
+    }
+
     int res;
 
     public void menuPrincipal() {
@@ -33,15 +40,35 @@ public class Menu {
             res = tohru.nextInt();
 
             if (res >= 1 && res <= 7) {
+
+                if (res == 7) {
+                    System.out.println("Seleccion de seccion terminada");
+                    return;
+                }
+
                 tohru.nextLine();
 
                 condicion = getSelection(res);
-                
+
                 count += 0;
             }
 
             count++;
         } while (!condicion);
+
+        if (res == 1) {
+            registroReservaciones();
+        } else if (res == 2) {
+
+        } else if (res == 3) {
+
+        } else if (res == 4) {
+
+        } else if (res == 5) {
+
+        } else if (res == 6) {
+
+        }
 
         System.out.println("Debugg: Seleccion terminada");
     }
@@ -103,28 +130,30 @@ public class Menu {
             return false;
         }
     }
-    public void registroReservaciones(){
-        Scanner tec = new Scanner (System.in);
+
+    public void registroReservaciones() {
+
+        Scanner tec = new Scanner(System.in);
         int cont;
         cont = 0;
-        String nombre[] = new String [cont];
-        int id [] = new int [cont];
-        String destino [] = new String [cont];
-        Pasajero pas = new Pasajero();
-        
-        while (cont==0 && cont<10){
+        String nombre[] = new String[cont];
+        String id[] = new String[cont];
+        char destino[] = new char[cont];
+
+        while (cont == 0 && cont < 10) {
             System.out.print("Nombre: ");
             nombre[cont] = tec.nextLine();
-            pas.setNombre(nombre[cont]);
+            pasajero.setnPasajero(nombre[cont]);
             System.out.print("Identificación (ID): ");
-            id[cont] = tec.nextInt();
-            pas.setIdentificaciones(id[cont]);
+            id[cont] = tec.nextLine();
+            pasajero.setiPasajero(id[0]);
             System.out.println("Destinos: "
-                + "         Luna (LUN)"
-                + "         Europa(EUR)"
-                + "         Titán (TAN)");
+                    + "         Luna (LUN)"
+                    + "         Europa(EUR)"
+                    + "         Titán (TAN)");
             System.out.print("Ingresar destino: ");
-            destino[cont] = tec.nextLine();
+            destino[cont] = tec.nextLine().charAt(0);
+            pasajero.setdPasajero(destino[cont]);
             cont++;
         }
     }
