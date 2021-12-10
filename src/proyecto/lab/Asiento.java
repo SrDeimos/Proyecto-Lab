@@ -3,8 +3,8 @@ package proyecto.lab;
 public class Asiento {
     
 int numeroAsiento;
-    char claseAsiento, ubicacionAsiento;
-    Pasajero pasajero;
+    private char claseAsiento, ubicacionAsiento;
+    private Pasajero pasajero;
     
     public Asiento(){
         

@@ -10,6 +10,14 @@ public class Nave {
         aEconomico = new Asiento[24];
         aEjecutivo = new Asiento[4];
         
+        aEjecutivo[0] = new Asiento(1,'1','1');
+        aEjecutivo[1] = new Asiento(2,'1','3');
+        aEjecutivo[2] = new Asiento(3,'1','3');
+        aEjecutivo[3] = new Asiento(4,'1','1');
+        aEconomico[0] = new Asiento(5,'2','1');
+        aEconomico[1] = new Asiento(6,'2','2');
+        
+        
         pasajero = null;
     }
     public boolean obtenerEstadoAsientosClaseEjecutiva(){
