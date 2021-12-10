@@ -4,10 +4,12 @@ public class Asiento {
     
 int numeroAsiento;
     char claseAsiento, ubicacionAsiento;
-    Pasajero pasajero = new Pasajero();
+    Pasajero pasajero;
+    
     public Asiento(){
         
     }
+    
     public Asiento(int numeroAsiento, char claseAsiento, char ubicacionAsiento){
         
     }
@@ -39,6 +41,7 @@ int numeroAsiento;
         pasajero = null;
     }
     public boolean obtenerEstadoAsiento(){
+    return false;
         
     }
 }

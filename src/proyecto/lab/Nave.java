@@ -2,46 +2,22 @@ package proyecto.lab;
 
 public class Nave {
 
-    Asiento asientoClaseEje[];
-    Asiento asientoClaseEco[];
+    private Asiento aEconomico[];
+    private Asiento aEjecutivo[];
     Pasajero pasajero;
 
     public Nave() {
-        asientoClaseEco = new Asiento[0];
-        asientoClaseEco = new Asiento[1];
-        asientoClaseEco = new Asiento[2];
-        asientoClaseEco = new Asiento[3];
-        asientoClaseEco = new Asiento[4];
-        asientoClaseEco = new Asiento[5];
-        asientoClaseEco = new Asiento[6];
-        asientoClaseEco = new Asiento[7];
-        asientoClaseEco = new Asiento[8];
-        asientoClaseEco = new Asiento[9];
-        asientoClaseEco = new Asiento[10];
-        asientoClaseEco = new Asiento[11];
-        asientoClaseEco = new Asiento[12];
-        asientoClaseEco = new Asiento[13];
-        asientoClaseEco = new Asiento[14];
-        asientoClaseEco = new Asiento[15];
-        asientoClaseEco = new Asiento[16];
-        asientoClaseEco = new Asiento[17];
-        asientoClaseEco = new Asiento[18];
-        asientoClaseEco = new Asiento[19];
-        asientoClaseEco = new Asiento[20];
-        asientoClaseEco = new Asiento[21];
-        asientoClaseEco = new Asiento[22];
-        asientoClaseEco = new Asiento[23];
-        asientoClaseEje = new Asiento[0];
-        asientoClaseEje = new Asiento[1];
-        asientoClaseEje = new Asiento[2];
-        asientoClaseEje = new Asiento[3];
-        asientoClaseEje = new Asiento[4];
+        aEconomico = new Asiento[24];
+        aEjecutivo = new Asiento[4];
+        
         pasajero = null;
     }
     public boolean obtenerEstadoAsientosClaseEjecutiva(){
+        return false;
         
     }
     public boolean obtenerEstadoAsientosClaseEconomica(){
+        return false;
         
     }
     public int obtenerAsientoClaseEjecutivaDesocupado(char ubicacionAsiento){
@@ -51,21 +27,25 @@ public class Nave {
         return ubicacionAsiento;
     }
     public Pasajero ObtenerPasajeroClaseEjecutiva (String nombrePasajero){
-        return nombrePasajero;
+        return null;
+
     }
     public Pasajero obtenerPasajeroClaseEconomica (String nombrePasajero){
-        return nombrePasajero;
+        return null;
+
     }
     public Pasajero obtenerPasajeroClaseEjecutiva(int numeroAsiento){
-        return numeroAsiento;
+        return null;
+
     }
     public Pasajero obtenerPasajeroClaseEconomica(int numeroAsiento){
+        return null;
         
     }
-    public void asignarPasajeroClaseEjecutiva(int numeroAsiento, Pasajero){
+    public void asignarPasajeroClaseEjecutiva(int numeroAsiento, Pasajero pasajero){
         
     }
-    public void asignarPasajeroClaseEconomica(int numeroAsiento, Pasajero){
+    public void asignarPasajeroClaseEconomica(int numeroAsiento, Pasajero pasajero){
         
     }
     public void eliminarPasajeroClaseEjecutiva(int numeroAsiento){
