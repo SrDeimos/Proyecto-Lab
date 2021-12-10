@@ -153,7 +153,16 @@ public class Menu {
                     + "         Titán (TAN)");
             System.out.print("Ingresar destino: ");
             destino[cont] = tec.nextLine().charAt(0);
-            pasajero.setdPasajero(destino[cont]);
+            if (destino[cont]=='1'||destino[cont]=='2'||destino[cont]=='3'){
+                pasajero.setdPasajero(destino[cont]);
+            }
+            else{
+                System.out.println("*** Error: Destino del pasajero inválido.");
+                System.out.println("Presionar <Enter> para continuar.");
+                System.out.print("Ingresar destino: ");
+                destino[cont] = tec.nextLine().charAt(0);
+                pasajero.setdPasajero(destino[cont]);   
+            }
             cont++;
         }
     }
