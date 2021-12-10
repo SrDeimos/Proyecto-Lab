@@ -16,10 +16,7 @@ public class Pasajero {
     }
 
     public float oCostoBoletoPasajero(char asiento){
-        
-        
-        
-        
+
         return 0;
         
     }

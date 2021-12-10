@@ -130,7 +130,6 @@ public class Menu {
     }
 
     public void registroReservaciones() {
-
         Scanner tec = new Scanner(System.in);
         
         String nPasajero, iPasajero;
