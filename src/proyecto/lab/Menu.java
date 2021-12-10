@@ -136,6 +136,8 @@ public class Menu {
         Scanner tec = new Scanner(System.in);
         int cont;
         cont = 0;
+        
+        int numeroAsiento [] = new int[cont];
         String nombre[] = new String[cont];
         String id[] = new String[cont];
         char destino[] = new char[cont];
@@ -153,7 +155,9 @@ public class Menu {
                     + "         Titán (TAN)");
             System.out.print("Ingresar destino: ");
             destino[cont] = tec.nextLine().charAt(0);
-            if (destino[cont]=='1'||destino[cont]=='2'||destino[cont]=='3'){
+            System.out.print("Escoja un número de asiento (): ");
+            numeroAsiento[cont] = tec.nextInt();
+            if (destino[cont]=='L'||destino[cont]=='E'||destino[cont]=='T'){
                 pasajero.setdPasajero(destino[cont]);
             }
             else{
