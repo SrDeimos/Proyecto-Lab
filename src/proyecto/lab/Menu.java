@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    Nave nave;
+    Nave nave = new Nave();
 
     Pasajero pasajero;
 
@@ -16,6 +16,8 @@ public class Menu {
 
     public void menuPrincipal() {
 
+        Scanner tohru = new Scanner(System.in);
+        
         boolean condicion = false;
 
         int count = 0;
@@ -24,11 +26,12 @@ public class Menu {
 
             if (count >= 1) {
                 System.out.println("  ");
-                System.out.println("Seleccion incorrecta, solamente hay selecciones del 1 al 7");
+                System.out.println("***Seleccion incorrecta, solamente hay selecciones del 1 al 7");
+                System.out.println("Presionar <Enter> para continuar");
+                tohru.nextLine();
                 System.out.println("  ");
             }
 
-            Scanner tohru = new Scanner(System.in);
             System.out.println("¡Seleccione una seccion del menu!");
             System.out.println("1)-. Registro de Reservaciones. (Se codea)");
             System.out.println("2)-. Eleminación de Reservaciones.");
@@ -49,18 +52,19 @@ public class Menu {
                 tohru.nextLine();
 
                 condicion = getSelection(res);
-
-                count += 0;
             }
 
             count++;
         } while (!condicion);
+
+        count = 0;
 
         switch (res) {
             case 1:
                 registroReservaciones();
                 break;
             case 5:
+                mostrarMapadeOcupacion();
                 break;
             case 6:
                 break;
@@ -116,7 +120,7 @@ public class Menu {
     public boolean sCorrecta() {
 
         Scanner tohru = new Scanner(System.in);
-        
+
         String respuesta;
 
         System.out.println("¿La seleccion es correcta? (S/N)");
@@ -130,72 +134,46 @@ public class Menu {
     }
 
     public void registroReservaciones() {
+
+        //Presentar mapa de ocupacion primero*
         Scanner tec = new Scanner(System.in);
-        
+
         String nPasajero, iPasajero;
         char dPasajero;
+
+        //Se muestra mapa de ocupacion
+        mostrarMapadeOcupacion();
         
         System.out.println("Bievenido, Porfavor ingrese su nombre!");
         nPasajero = tec.nextLine();
-        pasajero.setnPasajero(nPasajero);
-        
+
         System.out.println("");
-        
+
         System.out.println("Destinos: "
                 + "         Luna (LUN)"
                 + "         Europa(EUR)"
                 + "         Titán (TAN)");
         System.out.print("Ingresar destino: ");
         dPasajero = tec.nextLine().charAt(3);
-        pasajero.setdPasajero(dPasajero);
-        
+
         System.out.println("");
-        
+
         System.out.println("Ingrese su 'ID':");
         iPasajero = tec.nextLine();
-        pasajero.setiPasajero(iPasajero);
+
+        Pasajero pasajero = new Pasajero(nPasajero,iPasajero,dPasajero);
         
-        System.out.println("");
         
-        System.out.println("¿Que tipo de asiento escojera? ");
-        
-//        int cont;
-//        cont = 0;
-//        String nombre[] = new String[cont];
-//        String id[] = new String[cont];
-//        char destino[] = new char[cont];
-//
-//        while (cont == 0 && cont < 10) {
-//            System.out.print("Nombre: ");
-//            nombre[cont] = tec.nextLine();
-//            pasajero.setnPasajero(nombre[cont]);
-//            System.out.print("Identificación (ID): ");
-//            id[cont] = tec.nextLine();
-//            pasajero.setiPasajero(id[0]);
-//            System.out.println("Destinos: "
-//                    + "         Luna (LUN)"
-//                    + "         Europa(EUR)"
-//                    + "         Titán (TAN)");
-//            System.out.print("Ingresar destino: ");
-//            destino[cont] = tec.nextLine().charAt(0);
-//            if (destino[cont]=='1'||destino[cont]=='2'||destino[cont]=='3'){
-//                pasajero.setdPasajero(destino[cont]);
-//            }
-//            else{
-//                System.out.println("*** Error: Destino del pasajero inválido.");
-//                System.out.println("Presionar <Enter> para continuar.");
-//                System.out.print("Ingresar destino: ");
-//                destino[cont] = tec.nextLine().charAt(0);
-//                pasajero.setdPasajero(destino[cont]);   
-//            }
-//            cont++;
-//        }
-    }
-    
-    public void eliminarReservaciones( ){
+        System.out.println("¿Que asiento desea escojer?");
+        System.out.println("*Recuerde que solo hay asientos del 1 al 28*");
         
     }
-    
-    
+
+    public void eliminarReservaciones() {
+    }
+
+    public void mostrarMapadeOcupacion() {
+        System.out.println(" |1 " + nave.obtenerEstadoAsientosClaseEconomica() + "|" + "|2 "  + nave.obtenerAsientoClaseEconomicaDesocupado('1') + "|");
+    }
 
 }
